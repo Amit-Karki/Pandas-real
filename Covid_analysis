@@ -1,0 +1,10 @@
+import pandas as pd
+df = pd.read_csv('Covid.csv')
+print(df)
+x = df.groupby("WHO Region")[["Confirmed","Deaths"]].sum()
+x["death_per_case:"] = (x["Deaths"] / x["Confirmed"]) * 100
+#x.delete(["Confirmed","Deaths"])
+x.drop(["Confirmed","Deaths"],axis=1,inplace=True)
+x['death_per_case:'] = x['death_per_case:'].round().astype(int)
+print('The risk of death per confirmed case from low to high is given by:')
+print(x['death_per_case:'].sort_values(ascending=False))
