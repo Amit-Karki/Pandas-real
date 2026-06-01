@@ -1,2 +1,3 @@
 # Pandas-real
 We will implement the pandas library for solving real world finance  related problems and many more......
+This project is done by Amit Karki a student studying IT in Nepal, Kathmandu trying to be a Data Scientist.
