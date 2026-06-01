@@ -1,9 +1,22 @@
 import pandas as pd 
 
-df = pd.read_excel("A:\\Downloads\\intl_business.xlsx")
+df = pd.read_excel("intl_business.xlsx")
 #df.columns returns all columns in the dataframe like Customer_id
 print(df.columns) 
+# Our column name is incomplete and in shortform like inv_no So we must change it 
+df.rename(columns={
+    'cos_id': 'Customer_id',
+    'inv_day': 'invoice_day',
+    'Descrip': 'Product_details',
+    'inv_no': 'invoice_number',
+    'Stck_code':'Stock_code',
+    'Trans_has':'Transaction_history',
+    'Cst_chrt': 'Customer_chort',
+    'cm_guid': 'Complete_guide'
+},inplace=True)
+#We are checking for data types of all columns and if it not apporpriate like invoice day in string we may change it to appropraite type 
 print(df.dtypes)
+#We checked for data type of all column and its type is as except like country in string,quantity in integer etc.
 #isnull checks for missing value in each column and sum tells total missing value in each column
 print(df.isnull().sum())
 #We checke and and there are no missing values but wait may be there is invalid data like unit_price in -ve so lets check
