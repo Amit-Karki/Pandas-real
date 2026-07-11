@@ -1,11 +1,12 @@
 import pandas as pd
-import pandas as pd
 import numpy as np
-pd.set_option('display.max_columns',None)
 
+pd.set_option('display.max_columns',None)
 pd.set_option("display.max_rows", None)
-pd.set_option("display.width", 199999)
-df = pd.read_csv('A:\Downloads\Github_Demo\Pandas-real\ecommerce.csv')
+pd.set_option("display.width", 5000)
+
+df = pd.read_csv('ecommerce.csv')
+
 print(df.columns)
 print(df.head())
 print(df.isnull().sum())
